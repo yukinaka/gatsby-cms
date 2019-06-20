@@ -6,9 +6,9 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-interface IndexPageProps {
-  data: any,
-}
+// interface IndexPageProps {
+//   data: any,
+// }
 
 const Posts = styled.ul`
   list-style: none;
@@ -57,13 +57,13 @@ const Tag = styled(Link)`
   }
 `
 
-const IndexPage: FC<IndexPageProps> = ({ data }) => (
+const TagPage = ({ data }) => (
   <Layout>
-    {/* { console.log(props) } */}
     <SEO title='YNK' keywords={[`gatsby`, `application`, `react`]} />
-    <Posts>
+    aaa
+    {/* <Posts>
       {data.allContentfulBlogPosts.edges.map(({ node }, i) => {
-        const date: string = dayjs(node.createdAt).format('YYYY-MM-DD');
+        const date = dayjs(node.createdAt).format('YYYY-MM-DD');
         return (
           <PostItem key={node.slug}>
             <PublishDate>{date}</PublishDate>
@@ -74,31 +74,35 @@ const IndexPage: FC<IndexPageProps> = ({ data }) => (
           </PostItem>
         )
       })}
-    </Posts>
+    </Posts> */}
   </Layout>
 )
+export default TagPage;
 
-export default IndexPage
-
-export const pageQuery = graphql`
-  query pageQuery {
-    allContentfulBlogPosts(
-      sort: {
-        fields: [createdAt], order: DESC
-      }
-    ) {
-      edges {
-        node {
-          id
-          title
-          slug
-          createdAt(formatString: "MMMM DD, YYYY")
-          tags {
-            name
-            slug
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query($slug: String!) {
+//     allContentfulBlogPosts(
+//       filter: { [tags]: {
+//         name: { eq: $slug }
+//       }
+//       sort: { fields: [createdAt], order: DESC }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           title
+//           description
+//           slug
+//           content {
+//             childMarkdownRemark {
+//               html
+//             }
+//             id
+//             content
+//           }
+//           createdAt
+//         }
+//       }
+//     }
+//   }
+// `

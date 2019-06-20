@@ -7,11 +7,24 @@
 
 import React, { FC } from "react"
 import { StaticQuery, graphql } from "gatsby"
+import styled from '@emotion/styled';
 
 import Header from "./header"
 import { Global, css } from '@emotion/core'
 // import "./layout.css"
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+`
+const GlobalFooter = styled.footer`
+  text-align: center;
+  margin-top: auto;
+`;
 interface LayoutProps {
   children: React.ReactNode,
 };
@@ -26,6 +39,14 @@ const Layout: FC<LayoutProps> = ({ children }) => (
       margin: 0;
       padding: 0;
     }
+    a {
+      color: #1a8ef1;
+      text-decoration: none;
+      transition: 200ms;
+      &:hover {
+        color: #305d84;
+      }
+    }
   `} />
     <StaticQuery
       query={graphql`
@@ -38,22 +59,13 @@ const Layout: FC<LayoutProps> = ({ children }) => (
       }
     `}
       render={data => (
-        <>
+        <Container>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 0,
-            }}
-          >
-            <main>{children}</main>
-            <footer>
-              © {new Date().getFullYear()}
-            </footer>
-          </div>
-        </>
+          <main>{children}</main>
+          <GlobalFooter>
+            © {new Date().getFullYear()}
+          </GlobalFooter>
+        </Container>
       )}
     />
   </>
