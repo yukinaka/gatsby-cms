@@ -11,13 +11,13 @@ import styled from '@emotion/styled';
 
 import Header from "./header"
 import { Global, css } from '@emotion/core'
-// import "./layout.css"
+import 'sanitize.css'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 800px;
+  max-width: 700px;
   width: 100%;
   margin: auto;
 `
@@ -32,8 +32,10 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => (
   <>
     <Global styles={css`
+    @import url('https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP&display=swap');
+   
     html, body {
-      font-family: sans-serif;
+      font-family: 'Noto Sans JP', sans-serif;
       font-size: 16px;
       color: #4a4a4a;
       margin: 0;

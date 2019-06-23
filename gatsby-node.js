@@ -1,4 +1,5 @@
 const path = require('path')
+const _ = require('lodash');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -36,12 +37,18 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  tagResult.data.allContentfulBlogPosts.edges.forEach(({ node }) => {
+  const tagsArray = tagResult.data.allContentfulBlogPosts.edges.map(({ node }) => node.tags);
+  const _tagsArray = _.uniq(_.flatten(tagsArray));
+
+  _tagsArray.forEach((tag) => {
+    const slug = tag.toLowerCase();
+
     createPage({
-      path: node.slug,
+      path: slug,
       component: path.resolve('./src/templates/tags.js'),
       context: {
-        slug: node.slug,
+        tag,
+        slug,
       },
     })
   })

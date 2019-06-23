@@ -7,22 +7,29 @@ interface HeaderProps {
 }
 
 const Logo = styled(Link)`
-  color: #1a8ef1;
-  font-weight: bold;
-  font-size: 60px;
+  font-weight: normal;
+  font-size: 32px;
   text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  color: #4a4a4a;
+  &:hover,
+  &:visited {
+    color: #4a4a4a;
+  }
 `;
 
-const GrobalHeader = styled.header`
-  text-align: center;
+const GlobalHeader = styled.header`
+  margin-top: 30px;
+  text-align: left;
+  margin-bottom: 45px;
 `;
 
 const Header: FC<HeaderProps> = ({ siteTitle = '' }) => (
-  <GrobalHeader>
+  <GlobalHeader>
     <Logo to="/">
       {siteTitle}
     </Logo>
-  </GrobalHeader>
+  </GlobalHeader>
 )
 
 
