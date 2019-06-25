@@ -1,14 +1,15 @@
-import {Link} from "gatsby";
-import React, {FC} from "react";
-import styled from "@emotion/styled";
-import dayjs from 'dayjs';
-import TagList from './TagList';
+import { Link } from 'gatsby'
+import React, { FC } from 'react'
+import styled from '@emotion/styled'
+import dayjs from 'dayjs'
+import Tags from './Tags'
+import { Post } from '../utils/type'
 
 const PostsList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-`;
+`
 
 const PostItem = styled.li`
   margin-top: 60px;
@@ -29,23 +30,25 @@ const PublishDate = styled.span`
 `
 
 interface PostsPageProps {
-  posts: any,
+  posts: { node: Post }[]
 }
 
-const Posts: FC<PostsPageProps> = ({posts}) => (
+const Posts: FC<PostsPageProps> = ({ posts }) => (
   <PostsList>
     {posts.map(({ node }) => {
-      const date: string = dayjs(node.createdAt).format('YYYY-MM-DD');
+      const date: string = dayjs(node.createdAt).format('YYYY-MM-DD')
 
       return (
         <PostItem key={node.slug}>
           <PublishDate>{date}</PublishDate>
-          <PostHeading><Link to={`/${node.slug}`}>{node.title}</Link></PostHeading>
-          <TagList tags={node.tags} />
+          <PostHeading>
+            <Link to={`/${node.slug}`}>{node.title}</Link>
+          </PostHeading>
+          <Tags tags={node.tags} />
         </PostItem>
       )
     })}
   </PostsList>
-);
+)
 
-export default Posts;
+export default Posts
