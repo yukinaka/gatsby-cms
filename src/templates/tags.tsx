@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { graphql } from 'gatsby'
 import Posts from '../components/Posts'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { Post } from '../utils/type'
 
-const TagPage = ({ data, pageContext }) => (
+interface TagPageProps {
+  data: {
+    allContentfulBlogPosts: {
+      edges: { node: Post }[]
+    }
+  }
+  pageContext: {
+    tag: string
+  }
+}
+
+const TagPage: FC<TagPageProps> = ({ data, pageContext }) => (
   <Layout>
     <SEO title="yukinaka[log]" />
     <h1>Tag: {pageContext.tag}</h1>
     <Posts posts={data.allContentfulBlogPosts.edges} />
   </Layout>
 )
+
 export default TagPage
 
 export const query = graphql`

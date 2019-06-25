@@ -55,10 +55,10 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
+    "start": "yarn develop",
+    "serve": "yarn lint:fix && gatsby serve lint",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "lint": "eslint src/** --ext .ts,.tsx,.js",
+    "lint": "eslint . --ext .ts,.tsx,.js",
     "lint:fix": "yarn lint --fix"
   },
   "repository": {

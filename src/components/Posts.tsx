@@ -3,6 +3,7 @@ import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 import Tags from './Tags'
+import { PublishDate } from '../utils/styled';
 import { Post } from '../utils/type'
 
 const PostsList = styled.ul`
@@ -21,12 +22,6 @@ const PostHeading = styled.h2`
   font-size: 24px;
   font-weight: bold;
   margin: 0;
-`
-
-const PublishDate = styled.span`
-  display: block;
-  margin-bottom: 5px;
-  font-size: 12px;
 `
 
 interface PostsPageProps {

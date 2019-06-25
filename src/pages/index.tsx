@@ -16,7 +16,6 @@ interface IndexPageProps {
 
 const IndexPage: FC<IndexPageProps> = ({ data }) => (
   <Layout>
-    {console.log(data)}
     <SEO />
     <Posts posts={data.allContentfulBlogPosts.edges} />
   </Layout>
@@ -32,7 +31,7 @@ export const pageQuery = graphql`
           id
           title
           slug
-          createdAt(formatString: "MMMM DD, YYYY")
+          createdAt
           tags
         }
       }

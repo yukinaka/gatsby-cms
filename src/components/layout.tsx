@@ -24,7 +24,13 @@ const Container = styled.div`
 const GlobalFooter = styled.footer`
   text-align: center;
   margin-top: auto;
+  padding: 20px 0;
 `
+
+const MainContents = styled.main`
+  margin-bottom: 60px;
+`
+
 interface LayoutProps {
   children: React.ReactNode
 }
@@ -66,7 +72,7 @@ const Layout: FC<LayoutProps> = ({ children }) => (
       render={data => (
         <Container>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
+          <MainContents>{children}</MainContents>
           <GlobalFooter>© {new Date().getFullYear()}</GlobalFooter>
         </Container>
       )}
