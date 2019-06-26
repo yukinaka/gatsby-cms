@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 import Tags from './Tags'
-import { PublishDate } from '../utils/styled';
+import { PublishDate } from '../utils/styled'
 import { Post } from '../utils/type'
 
 const PostsList = styled.ul`
