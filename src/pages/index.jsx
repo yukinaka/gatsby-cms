@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Posts from '../components/Posts'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import SEO from '../components/seo'
 
 const IndexPage = ({ data }) => (

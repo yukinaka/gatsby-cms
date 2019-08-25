@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 /** @jsx jsx */
 import { css,jsx } from '@emotion/core'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import TagList from '../components/Tags'
 import { TwitterShareButton } from 'react-share';
 import dayjs from 'dayjs'
