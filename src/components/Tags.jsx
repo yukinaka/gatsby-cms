@@ -1,18 +1,19 @@
-import React, { FC } from 'react'
-import styled from '@emotion/styled'
+import React from 'react'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 import { Link } from 'gatsby'
 
-const TagList = styled.ul`
+const TagList = css`
   list-style: none;
   padding: 0;
   margin: 10px 0 0;
   display: flex;
 `
 
-const TagListItem = styled.li`
+const TagListItem = css`
   margin-right: 10px;
 `
-const Tag = styled(Link)`
+const Tag = css`
   text-decoration: none;
   display: block;
   border: 1px solid #4a4a4a;
@@ -22,22 +23,22 @@ const Tag = styled(Link)`
   border-radius: 4px;
   transition: 200ms;
   &:hover {
-    background: #4a4a4a;
+    background: #aaa;
     color: #fff;
   }
 `
 
 const Tags = ({ tags }) => (
-  <TagList>
+  <ul css={TagList}>
     {tags.map(tag => {
       const url = tag.toLowerCase()
       return (
-        <TagListItem key={tag}>
-          <Tag to={`/${url}`}>{tag}</Tag>
-        </TagListItem>
+        <li css={TagListItem} key={tag}>
+          <Link css={Tag} to={`/${url}`}>{tag}</Link>
+        </li>
       )
     })}
-  </TagList>
+  </ul>
 )
 
 export default Tags

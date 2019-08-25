@@ -3,8 +3,6 @@ import React, { FC } from 'react'
 import { jsx, css } from '@emotion/core'
 import { Link } from 'gatsby'
 
-
-
 const Header = ({ siteTitle = '' }) => (
   <header css={css({
     marginTop: '30px',

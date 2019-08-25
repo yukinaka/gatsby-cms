@@ -18,7 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allContentfulBlogPosts.edges.forEach(({ node }) => {
     createPage({
       path: node.slug,
-      component: path.resolve('./src/templates/blog-post.tsx'),
+      component: path.resolve('./src/templates/blog-post.jsx'),
       context: {
         slug: node.slug,
       },
@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: slug,
-      component: path.resolve('./src/templates/tags.tsx'),
+      component: path.resolve('./src/templates/tags.jsx'),
       context: {
         tag,
         slug,

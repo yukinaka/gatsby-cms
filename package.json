@@ -49,7 +49,7 @@
     "start": "yarn develop",
     "serve": "yarn lint:fix && gatsby serve lint",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "lint": "eslint . --ext .ts,.tsx,.js",
+    "lint": "eslint . --ext,.js,.jsx",
     "lint:fix": "yarn lint --fix"
   },
   "repository": {

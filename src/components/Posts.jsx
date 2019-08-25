@@ -4,7 +4,6 @@ import React, { FC } from 'react'
 import { css, jsx } from '@emotion/core';
 import dayjs from 'dayjs'
 import Tags from './Tags'
-import { Post } from '../utils/type'
 import styled from '@emotion/styled'
 
 export const PublishDate = styled.span`
