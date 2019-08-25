@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    "prettier",
+    "react",
+  ],
+  "extends": [
+    "plugin:prettier/recommended",
+  ],
+  "rules": {
+    /**
+     * @description rules of eslint-plugin-prettier
+     */
+    "react/jsx-uses-vars": 1,
+    "react/jsx-uses-react": 1,
+    "prettier/prettier": "error"
+  }
+}
