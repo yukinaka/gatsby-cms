@@ -5,38 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { FC } from 'react'
+import React from 'react';
 import { StaticQuery, graphql } from 'gatsby'
-import styled from '@emotion/styled'
-
-import Header from './header'
-import { Global, css } from '@emotion/core'
+import Header from './Header'
+/** @jsx jsx */
+import { Global, css, jsx } from '@emotion/core'
 import 'sanitize.css'
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  max-width: 700px;
-  width: 100%;
-  margin: auto;
-`
-const GlobalFooter = styled.footer`
-  text-align: center;
-  margin-top: auto;
-  padding: 20px 0;
-`
-
-const MainContents = styled.main`
-  margin-bottom: 60px;
-`
-
-interface LayoutProps {
-  children: React.ReactNode
-}
-
-const Layout: FC<LayoutProps> = ({ children }) => (
-  <>
+const Layout = ({ children }) => (
+  <React.Fragment>
     <Global
       styles={css`
         @import url('https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP&display=swap');
@@ -70,14 +47,27 @@ const Layout: FC<LayoutProps> = ({ children }) => (
         }
       `}
       render={data => (
-        <Container>
+        <div css={css`
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+          max-width: 700px;
+          padding-left: 10px;
+          padding-right: 10px;
+          width: 100%;
+          margin: auto;
+        `}>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <MainContents>{children}</MainContents>
-          <GlobalFooter>© {new Date().getFullYear()}</GlobalFooter>
-        </Container>
+          <main css={css`margin-bottom: 60px;`}>{children}</main>
+          <footer css={css`
+            text-align: center;
+            margin-top: auto;
+            padding: 20px 0;
+          `}>© {new Date().getFullYear()}</footer>
+        </div>
       )}
     />
-  </>
+  </React.Fragment>
 )
 
 export default Layout

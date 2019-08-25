@@ -2,19 +2,10 @@ import React, { FC } from 'react'
 import { graphql } from 'gatsby'
 import Posts from '../components/Posts'
 
-import { Post } from '../utils/type'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-interface IndexPageProps {
-  data: {
-    allContentfulBlogPosts: {
-      edges: { node: Post }[]
-    }
-  }
-}
-
-const IndexPage: FC<IndexPageProps> = ({ data }) => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO />
     <Posts posts={data.allContentfulBlogPosts.edges} />

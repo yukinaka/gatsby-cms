@@ -27,14 +27,10 @@ const Tag = styled(Link)`
   }
 `
 
-interface TagsProps {
-  tags: string[]
-}
-
-const Tags: FC<TagsProps> = ({ tags }) => (
+const Tags = ({ tags }) => (
   <TagList>
     {tags.map(tag => {
-      const url: string = tag.toLowerCase()
+      const url = tag.toLowerCase()
       return (
         <TagListItem key={tag}>
           <Tag to={`/${url}`}>{tag}</Tag>

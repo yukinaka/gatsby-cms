@@ -5,30 +5,8 @@ import Layout from '../components/layout'
 import TagList from '../components/Tags'
 import { TwitterShareButton } from 'react-share';
 import dayjs from 'dayjs'
-import { PublishDate } from '../utils/styled'
-import { Post } from '../utils/type'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-
-type article = Post & {
-  content: {
-    childMarkdownRemark: {
-      html: string
-    }
-  }
-}
-
-interface BlogPostProps {
-  data: {
-    site: {
-      siteMetadata: {
-        url: string
-        twitterHandle: string
-      }
-    }
-    contentfulBlogPosts: article
-  }
-}
 
 const Heading = styled.h1`
   font-size: 30px;
@@ -53,8 +31,8 @@ const TweetBtn = styled(TwitterShareButton)`
   cursor: pointer;
 `
 
-const BlogPost: FC<BlogPostProps> = ({ data }) => {
-  const date: string = dayjs(data.contentfulBlogPosts.createdAt).format(
+const BlogPost = ({ data }) => {
+  const date = dayjs(data.contentfulBlogPosts.createdAt).format(
     'YYYY-MM-DD'
   )
 

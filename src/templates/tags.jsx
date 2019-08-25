@@ -4,20 +4,8 @@ import Posts from '../components/Posts'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Post } from '../utils/type'
 
-interface TagPageProps {
-  data: {
-    allContentfulBlogPosts: {
-      edges: { node: Post }[]
-    }
-  }
-  pageContext: {
-    tag: string
-  }
-}
-
-const TagPage: FC<TagPageProps> = ({ data, pageContext }) => (
+const TagPage = ({ data, pageContext }) => (
   <Layout>
     <SEO title="yukinaka[log]" />
     <h1>Tag: {pageContext.tag}</h1>

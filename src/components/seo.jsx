@@ -9,14 +9,7 @@ import React, { FC } from 'react'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-interface SEOprops {
-  description?: string
-  lang?: string
-  meta?: []
-  title?: string
-}
-
-const SEO: FC<SEOprops> = ({
+const SEO = ({
   description = '',
   lang = 'ja',
   meta = [],
@@ -36,7 +29,7 @@ const SEO: FC<SEOprops> = ({
     `
   )
 
-  const metaDescription: string = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
