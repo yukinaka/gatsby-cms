@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const _ = require('lodash')
 
@@ -18,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allContentfulBlogPosts.edges.forEach(({ node }) => {
     createPage({
       path: node.slug,
-      component: path.resolve('./src/templates/blog-post.jsx'),
+      component: path.resolve('./src/templates/blog-post.tsx'),
       context: {
         slug: node.slug,
       },
@@ -47,7 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: slug,
-      component: path.resolve('./src/templates/tags.jsx'),
+      component: path.resolve('./src/templates/tags.tsx'),
       context: {
         tag,
         slug,
