@@ -34,7 +34,9 @@ const Tags = ({ tags }) => (
       const url = tag.toLowerCase()
       return (
         <li css={TagListItem} key={tag}>
-          <Link css={Tag} to={`/${url}`}>{tag}</Link>
+          <Link css={Tag} to={`/${url}`}>
+            {tag}
+          </Link>
         </li>
       )
     })}

@@ -1,45 +1,50 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 /** @jsx jsx */
-import { css,jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core'
 import Layout from '../components/Layout'
 import TagList from '../components/Tags'
-import { TwitterShareButton } from 'react-share';
+import { TwitterShareButton } from 'react-share'
 import dayjs from 'dayjs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { PublishDate } from "../components/Posts";
+import { PublishDate } from '../components/Posts'
 
 const BlogPost = ({ data }) => {
-  const date = dayjs(data.contentfulBlogPosts.createdAt).format(
-    'YYYY-MM-DD'
-  )
+  const date = dayjs(data.contentfulBlogPosts.createdAt).format('YYYY-MM-DD')
 
   return (
     <Layout>
       <article>
         <PublishDate>{date}</PublishDate>
-        <h1 css={
-          css`
+        <h1
+          css={css`
             font-size: 30px;
             margin-top: 0;
             line-height: 1;
-          `
-        }>{data.contentfulBlogPosts.title}</h1>
-        <div css={css`margin-bottom: 60px;`}
+          `}
+        >
+          {data.contentfulBlogPosts.title}
+        </h1>
+        <div
+          css={css`
+            margin-bottom: 60px;
+          `}
           dangerouslySetInnerHTML={{
             __html: data.contentfulBlogPosts.content.childMarkdownRemark.html,
           }}
         />
       </article>
       <TagList tags={data.contentfulBlogPosts.tags} />
-      <div css={css`
+      <div
+        css={css`
           margin-top: 60px;
           padding-bottom: 40px;
-          border-bottom: 1px solid #DDD;
+          border-bottom: 1px solid #ddd;
           display: flex;
           align-items: center;
-        `}>
+        `}
+      >
         <TwitterShareButton
           css={css`
             display: flex;

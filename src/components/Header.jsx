@@ -4,13 +4,15 @@ import { jsx, css } from '@emotion/core'
 import { Link } from 'gatsby'
 
 const Header = ({ siteTitle = '' }) => (
-  <header css={css({
-    marginTop: '30px',
-    textAlign: 'left',
-    marginBottom: '45px',
-  })}>
-    <Link css={
-      css`
+  <header
+    css={css({
+      marginTop: '30px',
+      textAlign: 'left',
+      marginBottom: '45px',
+    })}
+  >
+    <Link
+      css={css`
         font-weight: normal;
         font-size: 32px;
         text-decoration: none;
@@ -20,8 +22,11 @@ const Header = ({ siteTitle = '' }) => (
         &:visited {
           color: #4a4a4a;
         }
-      `
-    } to="/">{siteTitle}</Link>
+      `}
+      to="/"
+    >
+      {siteTitle}
+    </Link>
   </header>
 )
 

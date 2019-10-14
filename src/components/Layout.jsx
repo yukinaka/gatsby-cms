@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from 'react';
+import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 /** @jsx jsx */
@@ -47,23 +47,35 @@ const Layout = ({ children }) => (
         }
       `}
       render={data => (
-        <div css={css`
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-          max-width: 700px;
-          padding-left: 10px;
-          padding-right: 10px;
-          width: 100%;
-          margin: auto;
-        `}>
+        <div
+          css={css`
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            max-width: 700px;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 100%;
+            margin: auto;
+          `}
+        >
           <Header siteTitle={data.site.siteMetadata.title} />
-          <main css={css`margin-bottom: 60px;`}>{children}</main>
-          <footer css={css`
-            text-align: center;
-            margin-top: auto;
-            padding: 20px 0;
-          `}>© {new Date().getFullYear()}</footer>
+          <main
+            css={css`
+              margin-bottom: 60px;
+            `}
+          >
+            {children}
+          </main>
+          <footer
+            css={css`
+              text-align: center;
+              margin-top: auto;
+              padding: 20px 0;
+            `}
+          >
+            © {new Date().getFullYear()}
+          </footer>
         </div>
       )}
     />
