@@ -7,9 +7,9 @@
 
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Header from './Header'
-/** @jsx jsx */
-import { Global, css, jsx } from '@emotion/core'
+import { Header } from './Header'
+
+import { Global, css } from '@emotion/core'
 import 'sanitize.css'
 
 const Layout = ({ children }) => (

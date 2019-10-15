@@ -1,9 +1,10 @@
 import React from 'react'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-const TagList = css`
+export const TagList = styled.div`
   list-style: none;
   padding: 0;
   margin: 10px 0 0;
@@ -28,7 +29,7 @@ const Tag = css`
   }
 `
 
-const Tags = ({ tags }) => (
+export const Tags = ({ tags }) => (
   <ul css={TagList}>
     {tags.map(tag => {
       const url = tag.toLowerCase()
@@ -42,5 +43,3 @@ const Tags = ({ tags }) => (
     })}
   </ul>
 )
-
-export default Tags

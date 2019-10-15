@@ -1,9 +1,12 @@
 import React, { FC } from 'react'
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
-const Header = ({ siteTitle = '' }) => (
+interface HeaderProps {
+  siteTitle: string
+}
+
+export const Header: FC<HeaderProps> = ({ siteTitle = '' }) => (
   <header
     css={css({
       marginTop: '30px',
@@ -29,5 +32,3 @@ const Header = ({ siteTitle = '' }) => (
     </Link>
   </header>
 )
-
-export default Header

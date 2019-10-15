@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import dayjs from 'dayjs'
-import Tags from './Tags'
+import { Tags } from './Tags'
 import styled from '@emotion/styled'
 
 export const PublishDate = styled.span`

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import Layout from '../components/Layout'
-import TagList from '../components/Tags'
+import { TagList } from '../components/Tags'
 import { TwitterShareButton } from 'react-share'
 import dayjs from 'dayjs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
