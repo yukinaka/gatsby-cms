@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
-const _ = require('lodash')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const result = await graphql(`
+  const result = (await graphql(`
     {
       allContentfulBlogPosts {
         edges {
@@ -14,19 +13,8 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
-
-  result.data.allContentfulBlogPosts.edges.forEach(({ node }) => {
-    createPage({
-      path: node.slug,
-      component: path.resolve('./src/templates/blog-post.tsx'),
-      context: {
-        slug: node.slug,
-      },
-    })
-  })
-
-  const tagResult = await graphql(`
+  `)).data
+  const tagResult = (await graphql(`
     {
       allContentfulBlogPosts {
         edges {
@@ -36,14 +24,29 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `)).data
+  //tagの重複を取り除いた配列を作成
+  const tagsArray = tagResult.allContentfulBlogPosts.edges
+    .map(tag => {
+      return tag.node.tags
+    })[0]
+    .filter((x, i, array) => array.indexOf(x) === i)
 
-  const tagsArray = tagResult.data.allContentfulBlogPosts.edges.map(
-    ({ node }) => node.tags
-  )
-  const _tagsArray = _.uniq(_.flatten(tagsArray))
+  //一覧ページを作成
+  result.allContentfulBlogPosts.edges.forEach(post => {
+    const { slug } = post.node
 
-  _tagsArray.forEach(tag => {
+    createPage({
+      path: slug,
+      component: path.resolve('./src/templates/blog-post.tsx'),
+      context: {
+        slug: slug,
+      },
+    })
+  })
+
+  //タグページを作成
+  tagsArray.forEach(tag => {
     const slug = tag.toLowerCase()
 
     createPage({
