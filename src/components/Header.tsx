@@ -1,9 +1,12 @@
-import React, { FC } from 'react'
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import React from 'react'
+import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
-const Header = ({ siteTitle = '' }) => (
+interface HeaderProps {
+  siteTitle: string
+}
+
+export const Header: React.FunctionComponent<HeaderProps> = ({ siteTitle }) => (
   <header
     css={css({
       marginTop: '30px',
@@ -16,7 +19,7 @@ const Header = ({ siteTitle = '' }) => (
         font-weight: normal;
         font-size: 32px;
         text-decoration: none;
-        font-family: 'Lato', sans-serif;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
         color: #4a4a4a;
         &:hover,
         &:visited {
@@ -29,5 +32,3 @@ const Header = ({ siteTitle = '' }) => (
     </Link>
   </header>
 )
-
-export default Header

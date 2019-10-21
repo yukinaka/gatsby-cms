@@ -1,10 +1,10 @@
 import { Link } from 'gatsby'
-import React, { FC } from 'react'
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import React from 'react'
+import { css } from '@emotion/core'
 import dayjs from 'dayjs'
-import Tags from './Tags'
+import { Tags } from './Tags'
 import styled from '@emotion/styled'
+import { PostsResponse } from '../types'
 
 export const PublishDate = styled.span`
   display: block;
@@ -12,7 +12,9 @@ export const PublishDate = styled.span`
   font-size: 12px;
 `
 
-const Posts = ({ posts }) => (
+interface Props extends PostsResponse {}
+
+const Posts: React.FunctionComponent<Props> = ({ posts }) => (
   <ul
     css={css`
       list-style: none;
@@ -20,8 +22,8 @@ const Posts = ({ posts }) => (
       margin: 0;
     `}
   >
-    {posts.map(({ node }) => {
-      const date = dayjs(node.createdAt).format('YYYY-MM-DD')
+    {posts.map(post => {
+      const date = dayjs(post.node.createdAt).format('YYYY-MM-DD')
 
       return (
         <li
@@ -31,7 +33,7 @@ const Posts = ({ posts }) => (
               margin-top: 0;
             }
           `}
-          key={node.slug}
+          key={post.node.slug}
         >
           <PublishDate>{date}</PublishDate>
           <h2
@@ -41,9 +43,9 @@ const Posts = ({ posts }) => (
               margin: 0;
             `}
           >
-            <Link to={`/${node.slug}`}>{node.title}</Link>
+            <Link to={`/${post.node.slug}`}>{post.node.title}</Link>
           </h2>
-          <Tags tags={node.tags} />
+          <Tags tags={post.node.tags} />
         </li>
       )
     })}
