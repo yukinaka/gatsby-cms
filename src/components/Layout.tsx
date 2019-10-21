@@ -1,18 +1,23 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Header } from './Header'
-
+import dayjs from 'dayjs'
 import { Global, css } from '@emotion/core'
 import 'sanitize.css'
 
-const Layout = ({ children }) => (
+interface Props {
+  children: React.ReactElement
+}
+
+interface LayoutData {
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+}
+
+export const Layout: React.FunctionComponent<Props> = ({ children }) => (
   <React.Fragment>
     <Global
       styles={css`
@@ -46,7 +51,7 @@ const Layout = ({ children }) => (
           }
         }
       `}
-      render={data => (
+      render={(data: LayoutData) => (
         <div
           css={css`
             display: flex;
@@ -74,12 +79,10 @@ const Layout = ({ children }) => (
               padding: 20px 0;
             `}
           >
-            © {new Date().getFullYear()}
+            &copy; {dayjs().year()}
           </footer>
         </div>
       )}
     />
   </React.Fragment>
 )
-
-export default Layout
