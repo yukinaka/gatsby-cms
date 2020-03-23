@@ -4,4 +4,5 @@
   NODE_ENV = "development"
   ACCESS_TOKEN = "aeFn5hfMcNhiDhhM66jYpwjcGA5og34yQomhV-9Yjxc"
 [context.branch-deploy.environment]
+  ACCESS_TOKEN = "aeFn5hfMcNhiDhhM66jYpwjcGA5og34yQomhV-9Yjxc"
   NODE_ENV = "development"
