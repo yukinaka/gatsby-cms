@@ -43,7 +43,7 @@ const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
           <PublishDate>{date}</PublishDate>
           <h1
             css={css`
-              font-size: 30px;
+              font-size: 32px;
               margin-top: 0;
               line-height: 1;
             `}
