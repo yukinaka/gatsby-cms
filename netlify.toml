@@ -3,8 +3,8 @@
 [context.deploy-preview.environment]
   NODE_ENV = "development"
   ACCESS_TOKEN = "aeFn5hfMcNhiDhhM66jYpwjcGA5og34yQomhV-9Yjxc"
-  CONTENTFUL_HOST = "http://preview.contentful.com/"
+  CONTENTFUL_HOST = "preview.contentful.com/"
 [context.branch-deploy.environment]
   ACCESS_TOKEN = "aeFn5hfMcNhiDhhM66jYpwjcGA5og34yQomhV-9Yjxc"
   NODE_ENV = "development"
-  CONTENTFUL_HOST = "http://preview.contentful.com/"
+  CONTENTFUL_HOST = "preview.contentful.com/"
