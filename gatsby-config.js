@@ -2,13 +2,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const contentfulConfig = {
-  spaceId: process.env.SPACE_ID,
-  accessToken: process.env.ACCESS_TOKEN,
-  host: process.env.CONTENTFUL_HOST,
-  environment: 'production',
-}
-
 module.exports = {
   siteMetadata: {
     title: `yukinaka[log]`,
@@ -23,7 +16,11 @@ module.exports = {
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-contentful`,
-      options: contentfulConfig,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOST,
+      },
     },
     {
       resolve: `gatsby-plugin-emotion`,
