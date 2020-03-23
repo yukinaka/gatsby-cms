@@ -4,9 +4,7 @@
   NODE_ENV = "development"
   ACCESS_TOKEN = "aeFn5hfMcNhiDhhM66jYpwjcGA5og34yQomhV-9Yjxc"
   CONTENTFUL_HOST = "http://preview.contentful.com/"
-  environment = "develop"
 [context.branch-deploy.environment]
   ACCESS_TOKEN = "aeFn5hfMcNhiDhhM66jYpwjcGA5og34yQomhV-9Yjxc"
   NODE_ENV = "development"
   CONTENTFUL_HOST = "http://preview.contentful.com/"
-  environment = "develop"
