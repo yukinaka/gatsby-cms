@@ -6,7 +6,7 @@ const contentfulConfig = {
   spaceId: process.env.SPACE_ID,
   accessToken: process.env.ACCESS_TOKEN,
   host: process.env.CONTENTFUL_HOST,
-  environment: 'develop',
+  environment: 'production',
 }
 
 module.exports = {
