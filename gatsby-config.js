@@ -17,6 +17,7 @@ module.exports = {
       options: {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOST,
       },
     },
     {
