@@ -8,6 +8,9 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {props.headComponents}
+        {process.env.GATSBY_ACTIVE_ENV === 'development' ? (
+          <meta name="robots" content="noindex" />
+        ) : null}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
