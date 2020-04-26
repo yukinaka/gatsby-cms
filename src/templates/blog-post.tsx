@@ -37,6 +37,34 @@ const ContentComponent = styled.div`
   p {
     line-height: 2;
   }
+  pre[class*='language-'] {
+    border-top-left-radius: 0;
+    margin-top: 0;
+  }
+  .gatsby-code-title {
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 0.3rem solid hsl(0, 0%, 33%);
+    border-bottom: hsl(0, 0%, 8%);
+    position: relative;
+    top: 0.3rem;
+    z-index: 1;
+    box-shadow: 1px 1px 0.5rem black inset;
+    overflow: auto;
+    padding: 0.5rem;
+    display: inline-flex;
+    background: hsl(0, 0%, 8%);
+    color: white;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
+    font-size: 0.8rem;
+  }
 `
 
 const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
