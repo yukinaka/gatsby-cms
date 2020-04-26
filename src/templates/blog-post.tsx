@@ -37,19 +37,6 @@ const ContentComponent = styled.div`
   p {
     line-height: 2;
   }
-  code {
-    background: #f7ece2;
-    padding: 2px 4px;
-  }
-  pre {
-    background: #f7ece2;
-    padding: 5px 10px;
-    font-size: 0.9rem;
-    border: 1px solid #bf9e7f;
-    code {
-      background: none;
-    }
-  }
 `
 
 const BlogPost: React.FunctionComponent<Props> = ({ data }) => {

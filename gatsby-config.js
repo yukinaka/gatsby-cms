@@ -11,7 +11,6 @@ Frontend development notes and blogs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-contentful`,
@@ -19,6 +18,19 @@ Frontend development notes and blogs`,
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.ACCESS_TOKEN,
         host: process.env.CONTENTFUL_HOST,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-code-titles',
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
+        ],
       },
     },
     {
