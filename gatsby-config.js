@@ -5,7 +5,8 @@ module.exports = {
     title: `yukinaka[log]`,
     twitterHandle: 'yuki_naka18',
     url: 'https://www.code-plus.jp/',
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `
+Frontend development notes and blogs`,
     author: `@yuki_naka18`,
   },
   plugins: [
@@ -18,6 +19,15 @@ module.exports = {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.ACCESS_TOKEN,
         host: process.env.CONTENTFUL_HOST,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `material icons`,
+          `Noto Sans JP`, // you can also specify font weights and styles
+        ],
       },
     },
     {

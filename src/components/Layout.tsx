@@ -25,8 +25,6 @@ export const Layout: React.FunctionComponent<Props> = ({ children }) => (
   <React.Fragment>
     <Global
       styles={css`
-        @import url('https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP&display=swap');
-
         html,
         body {
           font-family: 'Noto Sans JP', sans-serif;
