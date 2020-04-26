@@ -1,0 +1,8 @@
+[context.deploy-preview.environment]
+  GATSBY_ACTIVE_ENV = "development"
+  ACCESS_TOKEN = "169ed7ff18a6962e2e683fde2729f94f9d43b63b287a8e137fe39a91450b6d63"
+  CONTENTFUL_HOST = "preview.contentful.com"
+[context.branch-deploy.environment]
+  ACCESS_TOKEN = "169ed7ff18a6962e2e683fde2729f94f9d43b63b287a8e137fe39a91450b6d63"
+  GATSBY_ACTIVE_ENV = "development"
+  CONTENTFUL_HOST = "preview.contentful.com"

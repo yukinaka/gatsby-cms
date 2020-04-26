@@ -8,6 +8,7 @@ import dayjs from 'dayjs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { PublishDate } from '../components/Posts'
+import styled from '@emotion/styled'
 
 interface Props {
   data: {
@@ -32,8 +33,13 @@ interface Props {
   }
 }
 
+const ContentComponent = styled.div`
+  p {
+    line-height: 2;
+  }
+`
+
 const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
-  console.log(data);
   const date = dayjs(data.contentfulBlogPosts.createdAt).format('YYYY-MM-DD')
 
   return (
@@ -43,14 +49,14 @@ const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
           <PublishDate>{date}</PublishDate>
           <h1
             css={css`
-              font-size: 30px;
+              font-size: 32px;
               margin-top: 0;
-              line-height: 1;
+              line-height: 1.6;
             `}
           >
             {data.contentfulBlogPosts.title}
           </h1>
-          <div
+          <ContentComponent
             css={css`
               margin-bottom: 60px;
             `}
