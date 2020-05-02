@@ -38,8 +38,10 @@ const ContentComponent = styled.div`
     line-height: 2;
   }
   pre[class*='language-'] {
-    border-top-left-radius: 0;
     margin-top: 0;
+    &:only-child {
+      border-top-left-radius: 0;
+    }
   }
   .gatsby-code-title {
     border-radius: 0.5rem 0.5rem 0 0;
