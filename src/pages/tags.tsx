@@ -35,6 +35,7 @@ const TagsComponent: React.FunctionComponent<ComponentProps> = ({ tags }) => {
     <Layout>
       <>
         <Seo />
+        <h2>Tags</h2>
         <Tags tags={tags} />
       </>
     </Layout>

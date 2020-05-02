@@ -12,6 +12,8 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ siteTitle }) => (
       marginTop: '30px',
       textAlign: 'left',
       marginBottom: '45px',
+      display: 'flex',
+      alignItems: 'center',
     })}
   >
     <h1
@@ -36,5 +38,28 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ siteTitle }) => (
         {siteTitle}
       </Link>
     </h1>
+    <nav
+      css={css`
+        margin-left: auto;
+      `}
+    >
+      <ul
+        css={css`
+          display: flex;
+        `}
+      >
+        <li>
+          <Link
+            css={css`
+              color: #4a4a4a;
+              font-weight:bold;
+            `}
+            to={`/tags`}
+          >
+            Tags
+          </Link>
+        </li>
+      </ul>
+    </nav>
   </header>
 )
