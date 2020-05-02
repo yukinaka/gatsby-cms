@@ -12,23 +12,54 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ siteTitle }) => (
       marginTop: '30px',
       textAlign: 'left',
       marginBottom: '45px',
+      display: 'flex',
+      alignItems: 'center',
     })}
   >
-    <Link
+    <h1
       css={css`
-        font-weight: normal;
-        font-size: 32px;
-        text-decoration: none;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
-        color: #4a4a4a;
-        &:hover,
-        &:visited {
-          color: #4a4a4a;
-        }
+        margin: 0;
       `}
-      to="/"
     >
-      {siteTitle}
-    </Link>
+      <Link
+        css={css`
+          font-weight: normal;
+          font-size: 32px;
+          text-decoration: none;
+          font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+          color: #4a4a4a;
+          &:hover,
+          &:visited {
+            color: #4a4a4a;
+          }
+        `}
+        to="/"
+      >
+        {siteTitle}
+      </Link>
+    </h1>
+    <nav
+      css={css`
+        margin-left: auto;
+      `}
+    >
+      <ul
+        css={css`
+          display: flex;
+        `}
+      >
+        <li>
+          <Link
+            css={css`
+              color: #4a4a4a;
+              font-weight:bold;
+            `}
+            to={`/tags`}
+          >
+            Tags
+          </Link>
+        </li>
+      </ul>
+    </nav>
   </header>
 )

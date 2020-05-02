@@ -17,10 +17,6 @@ interface LayoutData {
   }
 }
 
-console.log(process.env.GATSBY_ACTIVE_ENV)
-console.log(process.env.CONTENTFUL_HOST)
-console.log(process.env.ACCESS_TOKEN)
-
 export const Layout: React.FunctionComponent<Props> = ({ children }) => (
   <React.Fragment>
     <Global
@@ -40,6 +36,14 @@ export const Layout: React.FunctionComponent<Props> = ({ children }) => (
           &:hover {
             color: #305d84;
           }
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-weight: normal;
         }
       `}
     />

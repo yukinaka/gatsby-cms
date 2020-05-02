@@ -1,40 +1,36 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    tsconfigRootDir: ".",
+    tsconfigRootDir: '.',
     ecmaFeatures: {
-     jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: 'module',
   },
   settings: {
     react: {
-      version: 'detect' // Tells eslint-plugin-react to automatically detect the version of React to use
-    }
+      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
   },
   env: {
     es6: true,
     node: true,
     browser: true,
   },
-  plugins: [
-    "@typescript-eslint",
-    "prettier",
-    "react",
-  ],
+  plugins: ['@typescript-eslint', 'prettier', 'react'],
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "prettier/@typescript-eslint"
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+    'prettier/@typescript-eslint',
   ],
   rules: {
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    'prettier/prettier': "error",
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 2,
     'react/display-name': 0,
     'react/prop-types': 0,
@@ -46,6 +42,6 @@ module.exports = {
     '@typescript-eslint/no-object-literal-type-assertion': 'off',
     '@typescript-eslint/prefer-interface': 'off',
     '@typescript-eslint/camelcase': 'off',
-    '@typescript-eslint/no-empty-interface': 'off'
-  }
+    '@typescript-eslint/no-empty-interface': 'off',
+  },
 }

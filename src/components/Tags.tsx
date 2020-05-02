@@ -40,7 +40,7 @@ export const Tags: React.FunctionComponent<Props> = ({ tags }) => {
 
         return (
           <li css={TagListItem} key={tag}>
-            <Link css={Tag} to={`/${url}`}>
+            <Link css={Tag} to={`/tags/${url}`}>
               {tag}
             </Link>
           </li>
