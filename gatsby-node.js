@@ -3,33 +3,38 @@ const path = require('path')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const result = (await graphql(`
-    {
-      allContentfulBlogPosts {
-        edges {
-          node {
-            slug
+  const result = (
+    await graphql(`
+      {
+        allContentfulBlogPosts {
+          edges {
+            node {
+              slug
+            }
           }
         }
       }
-    }
-  `)).data
-  const tagResult = (await graphql(`
-    {
-      allContentfulBlogPosts {
-        edges {
-          node {
-            tags
+    `)
+  ).data
+
+  const tagResult = (
+    await graphql(`
+      {
+        allContentfulBlogPosts {
+          edges {
+            node {
+              tags
+            }
           }
         }
       }
-    }
-  `)).data
+    `)
+  ).data
+
   //tagの重複を取り除いた配列を作成
   const tagsArray = tagResult.allContentfulBlogPosts.edges
-    .map(tag => {
-      return tag.node.tags
-    })[0]
+    .map(tag => tag.node.tags)
+    .flatMap(x => x)
     .filter((x, i, array) => array.indexOf(x) === i)
 
   //一覧ページを作成
@@ -50,7 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const slug = tag.toLowerCase()
 
     createPage({
-      path: slug,
+      path: `tags/${slug}`,
       component: path.resolve('./src/templates/tags.tsx'),
       context: {
         tag,

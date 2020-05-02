@@ -17,10 +17,6 @@ interface LayoutData {
   }
 }
 
-console.log(process.env.GATSBY_ACTIVE_ENV)
-console.log(process.env.CONTENTFUL_HOST)
-console.log(process.env.ACCESS_TOKEN)
-
 export const Layout: React.FunctionComponent<Props> = ({ children }) => (
   <React.Fragment>
     <Global
