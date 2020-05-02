@@ -22,7 +22,7 @@ const TagPage: React.FunctionComponent<Props> = ({ data, pageContext }) => {
     <Layout>
       <>
         <Seo title="yukinaka[log]" />
-        <h1>Tag: {pageContext.tag}</h1>
+        <h2>Tag: {pageContext.tag}</h2>
         <Posts posts={data.allContentfulBlogPosts.edges} />
       </>
     </Layout>

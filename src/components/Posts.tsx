@@ -6,10 +6,10 @@ import { Tags } from './Tags'
 import styled from '@emotion/styled'
 import { PostsResponse } from '../types'
 
-export const PublishDate = styled.span`
+export const PublishDate = styled.time`
   display: block;
   margin-bottom: 5px;
-  font-size: 12px;
+  font-size: 14px;
 `
 
 interface Props extends PostsResponse {}
@@ -35,7 +35,7 @@ const Posts: React.FunctionComponent<Props> = ({ posts }) => (
           `}
           key={post.node.slug}
         >
-          <PublishDate>{date}</PublishDate>
+          <PublishDate date-time={date}>{date}</PublishDate>
           <h2
             css={css`
               font-size: 24px;

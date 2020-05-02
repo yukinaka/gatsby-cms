@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Tags } from '../components/Tags'
-import { Layout } from "../components/Layout";
-import { Seo } from "../components/seo";
+import { Layout } from '../components/Layout'
+import { Seo } from '../components/seo'
 
 interface Props {
   data: {

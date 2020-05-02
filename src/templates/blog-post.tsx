@@ -74,8 +74,8 @@ const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
     <Layout>
       <>
         <article>
-          <PublishDate>{date}</PublishDate>
-          <h1
+          <PublishDate data-time={date}>{date}</PublishDate>
+          <h2
             css={css`
               font-size: 32px;
               margin-top: 0;
@@ -83,7 +83,7 @@ const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
             `}
           >
             {data.contentfulBlogPosts.title}
-          </h1>
+          </h2>
           <ContentComponent
             css={css`
               margin-bottom: 60px;
