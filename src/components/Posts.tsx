@@ -23,7 +23,7 @@ const Posts: React.FunctionComponent<Props> = ({ posts }) => (
     `}
   >
     {posts.map(post => {
-      const date = dayjs(post.node.createdAt).format('YYYY-MM-DD')
+      const date = dayjs(post.node.publishedAt).format('YYYY-MM-DD')
 
       return (
         <li

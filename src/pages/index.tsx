@@ -35,7 +35,7 @@ export const pageQuery = graphql`
           id
           title
           slug
-          createdAt
+          publishedAt
           tags
         }
       }
