@@ -30,6 +30,7 @@ export const Seo: React.FunctionComponent<Props> = ({
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -37,15 +38,16 @@ export const Seo: React.FunctionComponent<Props> = ({
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const siteTitle = title
+    ? `${title}| ${site.siteMetadata.title}`
+    : `${site.siteMetadata.title}`
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      defaultTitle={site.siteMetadata.title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={siteTitle}
       meta={[
         {
           name: `description`,

@@ -4,9 +4,8 @@ module.exports = {
   siteMetadata: {
     title: `yukinaka[log]`,
     twitterHandle: 'yuki_naka18',
-    url: 'https://www.code-plus.jp/',
-    description: `
-Frontend development notes and blogs`,
+    siteUrl: 'https://yukinaka.me',
+    description: `Frontend development notes and blogs`,
     author: `@yuki_naka18`,
   },
   plugins: [

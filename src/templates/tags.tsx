@@ -21,7 +21,7 @@ const TagPage: React.FunctionComponent<Props> = ({ data, pageContext }) => {
   return (
     <Layout>
       <>
-        <Seo title="yukinaka[log]" />
+        <Seo title={`Tag: ${pageContext.tag}`} />
         <h2>Tag: {pageContext.tag}</h2>
         <Posts posts={data.allContentfulBlogPosts.edges} />
       </>
