@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { PublishDate } from '../components/Posts'
 import styled from '@emotion/styled'
+import { Seo } from '../components/seo'
 
 interface Props {
   data: {
@@ -78,6 +79,7 @@ const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
   return (
     <Layout>
       <>
+        <Seo title={data.contentfulBlogPosts.title} />
         <article>
           <PublishDate data-time={date}>{date}</PublishDate>
           <h2
@@ -139,7 +141,6 @@ export const query = graphql`
   query($slug: String!) {
     site {
       siteMetadata {
-        url
         twitterHandle
       }
     }
