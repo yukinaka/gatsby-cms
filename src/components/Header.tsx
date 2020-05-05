@@ -52,7 +52,7 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ siteTitle }) => (
           <Link
             css={css`
               color: #4a4a4a;
-              font-weight:bold;
+              font-weight: bold;
             `}
             to={`/tags`}
           >

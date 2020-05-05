@@ -38,9 +38,9 @@ const ContentComponent = styled.div`
     line-height: 2;
   }
   pre[class*='language-'] {
+    margin-top: 0;
     &:not(:only-child) {
       border-top-left-radius: 0;
-      margin-top: 0;
     }
   }
   .gatsby-code-title {
