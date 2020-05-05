@@ -27,6 +27,7 @@ interface Props {
     }
     site: {
       siteMetadata: {
+        title: string
         twitterHandle: string
         url: string
       }
@@ -125,7 +126,7 @@ const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
             `}
             url={`${data.site.siteMetadata.url}${data.contentfulBlogPosts.slug}`}
             via={data.site.siteMetadata.twitterHandle}
-            title={data.contentfulBlogPosts.title}
+            title={`${data.contentfulBlogPosts.title} | ${data.site.siteMetadata.title}`}
           >
             <FontAwesomeIcon icon={faTwitter} />
           </TwitterShareButton>
@@ -141,6 +142,7 @@ export const query = graphql`
   query($slug: String!) {
     site {
       siteMetadata {
+        title
         twitterHandle
       }
     }
