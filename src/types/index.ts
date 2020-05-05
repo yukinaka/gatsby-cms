@@ -4,7 +4,7 @@ export interface PostsResponse {
 
 export interface Post {
   node: {
-    createdAt: string
+    publishedAt: string
     id: string
     slug: string
     title: string

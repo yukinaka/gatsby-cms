@@ -18,11 +18,11 @@ interface Props {
           html: string
         }
       }
-      createdAt: string
       image: any[]
       slug: string
       tags: string[]
       title: string
+      publishedAt: Date
     }
     site: {
       siteMetadata: {
@@ -39,7 +39,7 @@ const ContentComponent = styled.div`
   }
   pre[class*='language-'] {
     margin-top: 0;
-    &:only-child {
+    &:not(:only-child) {
       border-top-left-radius: 0;
     }
   }
@@ -67,10 +67,13 @@ const ContentComponent = styled.div`
     hyphens: none;
     font-size: 0.8rem;
   }
+  img {
+    border: 2px solid #4a4a4a;
+  }
 `
 
 const BlogPost: React.FunctionComponent<Props> = ({ data }) => {
-  const date = dayjs(data.contentfulBlogPosts.createdAt).format('YYYY-MM-DD')
+  const date = dayjs(data.contentfulBlogPosts.publishedAt).format('YYYY-MM-DD')
 
   return (
     <Layout>
@@ -143,7 +146,7 @@ export const query = graphql`
     contentfulBlogPosts(slug: { eq: $slug }) {
       title
       tags
-      createdAt
+      publishedAt
       slug
       image {
         sizes(maxWidth: 800) {
